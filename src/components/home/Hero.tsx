@@ -15,12 +15,23 @@ const reassurance = [
 
 export function Hero() {
   return (
-    <section className="bg-practice-cream">
-      {/* Split Consult: text and graphic share the fold evenly from xl — the same
-          breakpoint the header switches to its full desktop nav, so the two never
-          disagree about "desktop" vs "mobile". Below xl the graphic sits stacked
-          beneath the text, centred. */}
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:grid xl:grid-cols-[1.05fr_0.95fr] xl:items-center xl:gap-12 xl:px-8 xl:py-28">
+    <section className="relative isolate overflow-hidden bg-practice-cream">
+      {/* From xl: graphic bleeds off the right edge behind a scrim, so the text
+          keeps full contrast. This is the same breakpoint the header switches to
+          its full desktop nav, so the hero and header never disagree about
+          "desktop" vs "mobile". */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 opacity-90 xl:block"
+      >
+        <LensChartGraphic className="h-full w-full" />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-cream via-practice-cream/75 to-transparent xl:block"
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:py-28">
         <div className="max-w-xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-practice-gold">
             Independent Opticians in West Wickham
@@ -62,10 +73,11 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="mt-10 flex justify-center xl:mt-0 xl:justify-end">
-          <div className="flex aspect-[4/4.6] w-full max-w-[380px] items-center justify-center rounded-xl2 bg-gradient-to-br from-practice-teal-light via-white to-practice-gold-light p-5 shadow-card">
-            <LensChartGraphic className="h-full w-full" />
-          </div>
+        {/* Below xl: the backdrop graphic becomes a plain contained image beneath
+            the text instead of a bleed (there's no room to bleed it without
+            crowding the copy). */}
+        <div className="mt-10 flex justify-center xl:hidden">
+          <LensChartGraphic className="h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96" />
         </div>
       </div>
     </section>
