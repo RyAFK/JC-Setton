@@ -15,32 +15,12 @@ const reassurance = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-practice-cream">
-      {/* Below xl: graphic sits as a faded watermark behind the eyebrow + headline
-          only — anchored to the top, where there's open space around big type —
-          so it never sits behind the body copy, buttons or checklist. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-6 h-[300px] w-[300px] -translate-x-1/2 opacity-[0.09] sm:h-[340px] sm:w-[340px] xl:hidden"
-      >
-        <LensChartGraphic className="h-full w-full" />
-      </div>
-
-      {/* From xl: graphic bleeds off the right edge, with a scrim so the text keeps
-          full contrast. This is the same breakpoint the header switches to its full
-          desktop nav, so the hero and header never disagree about "desktop" vs "mobile". */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 opacity-90 xl:block"
-      >
-        <LensChartGraphic className="h-full w-full" />
-      </div>
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-cream via-practice-cream/75 to-transparent xl:block"
-      />
-
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:py-28">
+    <section className="bg-practice-cream">
+      {/* Split Consult: text and graphic share the fold evenly from xl — the same
+          breakpoint the header switches to its full desktop nav, so the two never
+          disagree about "desktop" vs "mobile". Below xl the graphic sits stacked
+          beneath the text, centred. */}
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:grid xl:grid-cols-[1.05fr_0.95fr] xl:items-center xl:gap-12 xl:px-8 xl:py-28">
         <div className="max-w-xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-practice-gold">
             Independent Opticians in West Wickham
@@ -80,6 +60,12 @@ export function Hero() {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="mt-10 flex justify-center xl:mt-0 xl:justify-end">
+          <div className="flex aspect-[4/4.6] w-full max-w-[380px] items-center justify-center rounded-xl2 bg-gradient-to-br from-practice-teal-light via-white to-practice-gold-light p-5 shadow-card">
+            <LensChartGraphic className="h-full w-full" />
+          </div>
         </div>
       </div>
     </section>
