@@ -16,12 +16,20 @@ const reassurance = [
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-practice-cream">
-      {/* Backdrop graphic — bleeds off the right edge from the same breakpoint the
-          header switches to its full desktop nav (xl), so the hero and header never
-          disagree about whether we're in "desktop" or "mobile" mode. */}
+      {/* Below xl: graphic sits as a faded watermark centred behind the text. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 top-1/2 hidden h-[560px] w-[560px] -translate-y-1/2 opacity-90 xl:block xl:-right-16 xl:h-[640px] xl:w-[640px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] sm:h-[440px] sm:w-[440px] xl:hidden"
+      >
+        <LensChartGraphic className="h-full w-full" />
+      </div>
+
+      {/* From xl: graphic bleeds off the right edge, with a scrim so the text keeps
+          full contrast. This is the same breakpoint the header switches to its full
+          desktop nav, so the hero and header never disagree about "desktop" vs "mobile". */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[640px] w-[640px] -translate-y-1/2 opacity-90 xl:block"
       >
         <LensChartGraphic className="h-full w-full" />
       </div>
@@ -30,7 +38,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-cream via-practice-cream/75 to-transparent xl:block"
       />
 
-      <div className="relative mx-auto max-w-6xl px-4 pb-8 pt-12 sm:px-6 sm:pb-10 sm:pt-16 lg:px-8 xl:py-28">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:py-28">
         <div className="max-w-xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-practice-gold">
             Independent Opticians in West Wickham
@@ -70,11 +78,6 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Contained graphic — shown in place of the backdrop below the xl breakpoint */}
-        <div className="mt-8 flex justify-center xl:hidden">
-          <LensChartGraphic className="h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96" />
         </div>
       </div>
     </section>
