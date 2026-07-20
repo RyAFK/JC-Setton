@@ -16,10 +16,12 @@ const reassurance = [
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-practice-cream">
-      {/* Below xl: graphic sits as a faded watermark centred behind the text. */}
+      {/* Below xl: graphic sits as a faded watermark behind the eyebrow + headline
+          only — anchored to the top, where there's open space around big type —
+          so it never sits behind the body copy, buttons or checklist. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 opacity-[0.14] sm:h-[440px] sm:w-[440px] xl:hidden"
+        className="pointer-events-none absolute left-1/2 top-6 h-[300px] w-[300px] -translate-x-1/2 opacity-[0.09] sm:h-[340px] sm:w-[340px] xl:hidden"
       >
         <LensChartGraphic className="h-full w-full" />
       </div>
