@@ -1,59 +1,97 @@
 /**
- * Hero visual placeholder.
- *
- * No authentic photography of the practice was available to this build (see
- * project notes). Rather than use generic stock/AI "healthcare" photography,
- * this renders a calm, editorial illustration referencing an eye
- * examination — clearly a graphic, not a photo standing in for one.
+ * Hero graphic placeholder: a Snellen eye chart coming into sharp focus
+ * within a trial-lens dial. No authentic practice photography was
+ * available to this build, so rather than use generic stock/AI
+ * "healthcare" imagery, this is a clearly-a-graphic illustration grounded
+ * in an actual optometry instrument (a trial lens) and the eye test itself.
  *
  * To use a real photo instead: drop the file at
- * `public/images/hero-practice.jpg` and swap this component's markup for a
- * Next.js <Image> pointing at it (set width/height to avoid layout shift,
- * and write alt text describing what is actually shown).
+ * `public/images/hero-practice.jpg` and swap <LensChartGraphic> in
+ * Hero.tsx for a Next.js <Image> pointing at it (set width/height to avoid
+ * layout shift, and write alt text describing what is actually shown).
  */
-export function HeroVisual() {
+
+const TICK_COUNT = 24;
+const TICKS = Array.from({ length: TICK_COUNT }, (_, i) => {
+  const angle = (i / TICK_COUNT) * Math.PI * 2;
+  const cx = 200;
+  const cy = 200;
+  return {
+    x1: cx + 188 * Math.cos(angle),
+    y1: cy + 188 * Math.sin(angle),
+    x2: cx + 178 * Math.cos(angle),
+    y2: cy + 178 * Math.sin(angle),
+  };
+});
+
+export function LensChartGraphic({ className }: { className?: string }) {
   return (
-    <figure
-      className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-xl2 bg-gradient-to-br from-practice-teal-light via-white to-practice-gold-light shadow-card sm:aspect-square lg:aspect-[4/5]"
+    <svg
+      viewBox="0 0 400 400"
+      className={className}
       role="img"
-      aria-label="Illustration of an optometrist examining a patient's eyes using retinal imaging equipment, in a calm consulting room"
+      aria-label="Illustration of an eye test chart coming into sharp focus within a trial lens, representing a thorough eye examination"
     >
-      <svg
-        viewBox="0 0 400 480"
-        className="absolute inset-0 h-full w-full"
-        aria-hidden="true"
-      >
-        <rect width="400" height="480" fill="none" />
-        <circle cx="200" cy="190" r="120" fill="#0f5c5c" opacity="0.06" />
-        <circle cx="200" cy="190" r="80" fill="#0f5c5c" opacity="0.08" />
-        {/* Simple line illustration: patient profile + phoropter/imaging device */}
-        <path
-          d="M120 260c0-44 36-80 80-80s80 36 80 80"
-          stroke="#0f5c5c"
-          strokeWidth="3"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <circle cx="200" cy="150" r="46" stroke="#0f5c5c" strokeWidth="3" fill="#faf8f4" />
-        <circle cx="184" cy="146" r="6" fill="#0f5c5c" />
-        <circle cx="216" cy="146" r="6" fill="#0f5c5c" />
-        <path d="M178 168c6 6 12 8 22 8s16-2 22-8" stroke="#0f5c5c" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        {/* imaging device arm */}
-        <path
-          d="M300 220c20-8 36 4 36 24s-16 30-36 22"
-          stroke="#b6862c"
-          strokeWidth="3"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <circle cx="308" cy="246" r="14" stroke="#b6862c" strokeWidth="3" fill="#f6ecd9" />
-        {/* base / desk line */}
-        <path d="M60 400h280" stroke="#0f5c5c" strokeWidth="2" opacity="0.25" strokeLinecap="round" />
-        <path d="M120 260v70M280 260v70" stroke="#0f5c5c" strokeWidth="3" opacity="0.5" strokeLinecap="round" />
-      </svg>
-      <figcaption className="sr-only">
-        Illustration representing a thorough, unhurried eye examination at J.C. Setton Opticians
-      </figcaption>
-    </figure>
+      <defs>
+        <radialGradient id="lensGradient" cx="50%" cy="42%" r="70%">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="55%" stopColor="#eef6f5" />
+          <stop offset="100%" stopColor="#dcece9" />
+        </radialGradient>
+        <filter id="lensBlurLarge">
+          <feGaussianBlur stdDeviation="2.4" />
+        </filter>
+        <filter id="lensBlurMedium">
+          <feGaussianBlur stdDeviation="1.3" />
+        </filter>
+      </defs>
+
+      <circle cx="200" cy="200" r="196" fill="url(#lensGradient)" />
+      <circle cx="200" cy="200" r="188" fill="none" stroke="#b6862c" strokeWidth="2" opacity="0.55" />
+      <g stroke="#b6862c" strokeWidth="2" opacity="0.55">
+        {TICKS.map((t, i) => (
+          <line key={i} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />
+        ))}
+      </g>
+
+      <g style={{ fontFamily: 'var(--font-display)' }} textAnchor="middle" fill="#132022">
+        <text x="200" y="96" fontSize="46" filter="url(#lensBlurLarge)" opacity="0.45">
+          E
+        </text>
+        <text x="200" y="146" fontSize="34" filter="url(#lensBlurMedium)" opacity="0.65">
+          F P
+        </text>
+        <text x="200" y="192" fontSize="25">
+          T O Z
+        </text>
+        <text x="200" y="228" fontSize="19">
+          L P E D
+        </text>
+        <text x="200" y="258" fontSize="15" filter="url(#lensBlurMedium)" opacity="0.6">
+          P E C F D
+        </text>
+        <text x="200" y="284" fontSize="12" filter="url(#lensBlurLarge)" opacity="0.4">
+          E D F C Z P
+        </text>
+      </g>
+
+      <line x1="140" y1="212" x2="260" y2="212" stroke="#0f5c5c" strokeWidth="1" opacity="0.3" />
+      <circle cx="200" cy="200" r="6" fill="none" stroke="#0f5c5c" strokeWidth="1.4" opacity="0.5" />
+
+      <g style={{ fontFamily: 'var(--font-display)' }} fontSize="10" fill="#62767a" textAnchor="middle">
+        <text x="200" y="42">
+          0
+        </text>
+        <text x="326" y="204">
+          +2
+        </text>
+        <text x="74" y="204">
+          -2
+        </text>
+        <text x="200" y="366">
+          6/6
+        </text>
+      </g>
+    </svg>
   );
 }

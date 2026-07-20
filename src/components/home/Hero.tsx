@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/Button';
-import { HeroVisual } from '@/components/HeroVisual';
+import { LensChartGraphic } from '@/components/HeroVisual';
 import { IconCheck } from '@/components/ui/icons';
 import { practice } from '@/content/practice';
 import { trackEvent } from '@/lib/analytics';
@@ -15,9 +15,21 @@ const reassurance = [
 
 export function Hero() {
   return (
-    <section className="bg-practice-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-24">
-        <div>
+    <section className="relative isolate overflow-hidden bg-practice-cream">
+      {/* Backdrop graphic — bleeds off the right edge on large screens only */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 top-1/2 hidden h-[560px] w-[560px] -translate-y-1/2 opacity-90 lg:block xl:-right-16 xl:h-[640px] xl:w-[640px]"
+      >
+        <LensChartGraphic className="h-full w-full" />
+      </div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-cream via-practice-cream/75 to-transparent lg:block"
+      />
+
+      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-28">
+        <div className="max-w-xl">
           <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-practice-gold">
             Independent Opticians in West Wickham
           </p>
@@ -58,8 +70,9 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="flex justify-center lg:justify-end">
-          <HeroVisual />
+        {/* Contained graphic — shown in place of the backdrop below the lg breakpoint */}
+        <div className="mt-10 flex justify-center lg:hidden">
+          <LensChartGraphic className="h-64 w-64 sm:h-72 sm:w-72" />
         </div>
       </div>
     </section>
