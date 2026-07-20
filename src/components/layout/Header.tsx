@@ -68,25 +68,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Compact booking CTA — visible below the xl desktop nav breakpoint, outside the hamburger menu */}
-      <div className="flex items-center gap-2 border-t border-black/5 px-4 py-2.5 xl:hidden">
-        <Button
-          href="/book"
-          className="flex-1"
-          onClick={() => trackEvent('header_booking_cta_click', { context: 'mobile_bar' })}
-        >
-          Book Your Eye Test
-        </Button>
-        <a
-          href={practice.phone.href}
-          onClick={() => trackEvent('telephone_link_click', { location: 'header_mobile' })}
-          aria-label={`Call us on ${practice.phone.display}`}
-          className="flex min-h-[48px] min-w-[48px] items-center justify-center rounded-full border-2 border-practice-teal text-practice-teal focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
-        >
-          <IconPhone width={22} height={22} />
-        </a>
-      </div>
-
       {open && (
         <div id="mobile-menu" className="border-t border-black/5 bg-white xl:hidden">
           <nav aria-label="Mobile primary">
