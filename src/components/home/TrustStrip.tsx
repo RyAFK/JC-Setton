@@ -1,5 +1,4 @@
 import { Section } from '@/components/ui/Section';
-import { Reveal } from '@/components/ui/Reveal';
 import { IconEye, IconScan, IconLens, IconChild } from '@/components/ui/icons';
 
 const items = [
@@ -29,15 +28,13 @@ export function TrustStrip() {
   return (
     <Section className="py-16 sm:py-20">
       <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map(({ icon: Icon, title, body }, index) => (
-          <li key={title}>
-            <Reveal index={index} className="group flex flex-col items-start gap-4">
-              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-practice-blue-tint text-practice-blue transition-transform duration-200 group-hover:scale-110">
-                <Icon />
-              </span>
-              <h3 className="font-display text-h3 text-ink-900">{title}</h3>
-              <p className="text-[15px] leading-relaxed text-ink-700">{body}</p>
-            </Reveal>
+        {items.map(({ icon: Icon, title, body }) => (
+          <li key={title} className="flex flex-col items-start gap-4">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-practice-blue-tint text-practice-blue">
+              <Icon />
+            </span>
+            <h3 className="font-display text-h3 text-ink-900">{title}</h3>
+            <p className="text-[15px] leading-relaxed text-ink-700">{body}</p>
           </li>
         ))}
       </ul>
