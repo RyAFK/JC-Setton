@@ -1,4 +1,5 @@
 import { Section, SectionHeading } from '@/components/ui/Section';
+import { Reveal } from '@/components/ui/Reveal';
 import { IconEye, IconCheck, IconLens, IconScan } from '@/components/ui/icons';
 
 const points = [
@@ -29,14 +30,16 @@ export function WhyChooseUs() {
     <Section>
       <SectionHeading title="Why Choose J.C. Setton Opticians?" align="center" />
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {points.map(({ icon: Icon, title, body }) => (
-          <div key={title} className="rounded-xl2 border border-black/5 bg-practice-paper p-8">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-practice-blue shadow-card">
-              <Icon width={22} height={22} />
-            </span>
-            <h3 className="mt-5 font-display text-h3 text-ink-900">{title}</h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{body}</p>
-          </div>
+        {points.map(({ icon: Icon, title, body }, index) => (
+          <Reveal key={title} index={index}>
+            <div className="group h-full rounded-xl2 border border-black/5 bg-practice-paper p-8 transition-all duration-200 hover:-translate-y-1 hover:shadow-card">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-practice-blue shadow-card transition-transform duration-200 group-hover:scale-110">
+                <Icon width={22} height={22} />
+              </span>
+              <h3 className="mt-5 font-display text-h3 text-ink-900">{title}</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{body}</p>
+            </div>
+          </Reveal>
         ))}
       </div>
     </Section>

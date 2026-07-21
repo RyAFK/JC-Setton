@@ -1,10 +1,12 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { LensChartGraphic } from '@/components/HeroVisual';
 import { IconCheck } from '@/components/ui/icons';
 import { practice } from '@/content/practice';
 import { trackEvent } from '@/lib/analytics';
+import { usePrefersReducedMotion } from '@/lib/usePrefersReducedMotion';
 
 const reassurance = [
   'Independent practice',
@@ -14,6 +16,8 @@ const reassurance = [
 ];
 
 export function Hero() {
+  const reduceMotion = usePrefersReducedMotion();
+
   return (
     <section className="relative isolate overflow-hidden bg-practice-paper">
       {/* From xl: graphic bleeds off the right edge behind a scrim, so the text
@@ -32,7 +36,12 @@ export function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 xl:py-32">
-        <div className="max-w-xl">
+        <motion.div
+          className="max-w-xl"
+          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        >
           <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-practice-accent">
             Independent Opticians in West Wickham
           </p>
@@ -71,7 +80,7 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Below xl: the backdrop graphic becomes a plain contained image beneath
             the text instead of a bleed (there's no room to bleed it without

@@ -17,7 +17,7 @@ export function AppointmentTypeCard({ type, as = 'link', href, onSelect, selecte
         <IconChevronRight
           width={20}
           height={20}
-          className="mt-1 shrink-0 text-practice-blue"
+          className="mt-1 shrink-0 text-practice-blue transition-transform duration-200 group-hover:translate-x-0.5"
         />
       </div>
       <p className="mt-2 text-[15px] text-ink-700">{type.description}</p>
@@ -30,7 +30,7 @@ export function AppointmentTypeCard({ type, as = 'link', href, onSelect, selecte
     </>
   );
 
-  const baseClasses = `block rounded-xl2 border-2 p-8 text-left shadow-card transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus ${
+  const baseClasses = `group block rounded-xl2 border-2 p-8 text-left shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${
     selected ? 'border-practice-blue bg-practice-blue-tint' : 'border-transparent bg-white hover:border-practice-blue/40'
   }`;
 
