@@ -135,7 +135,7 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
-export const brands = ['Ray-Ban', 'Calvin Klein Platinum Label', 'Guess'];
+export const brands = ['Calvin Klein', 'Guess', 'Bench', 'Nike', 'Silhouette'];
 
 export const nav = [
   { label: 'Eye Tests', href: '/eye-tests' },
