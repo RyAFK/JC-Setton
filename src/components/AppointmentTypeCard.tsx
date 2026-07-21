@@ -22,25 +22,6 @@ export function AppointmentTypeCard({ type, as = 'link', href, onSelect, selecte
       </div>
       <p className="mt-2 text-[15px] text-ink-700">{type.description}</p>
 
-      <dl className="mt-4 space-y-1.5 text-sm text-ink-700">
-        <div className="flex gap-2">
-          <dt className="font-semibold text-ink-900">Price / eligibility:</dt>
-          <dd>{type.priceOrEligibility}</dd>
-        </div>
-        {type.duration && (
-          <div className="flex gap-2">
-            <dt className="font-semibold text-ink-900">Duration:</dt>
-            <dd>{type.duration}</dd>
-          </div>
-        )}
-        {type.preparation && (
-          <div className="flex gap-2">
-            <dt className="font-semibold text-ink-900">Before you come:</dt>
-            <dd>{type.preparation}</dd>
-          </div>
-        )}
-      </dl>
-
       {type.callInsteadOf && (
         <p className="mt-4 rounded-md bg-practice-accent-tint px-3 py-2 text-sm font-medium text-ink-900">
           Please call us instead of booking online for this concern.
