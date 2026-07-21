@@ -1,7 +1,6 @@
 import { Hero } from '@/components/home/Hero';
 import { TrustStrip } from '@/components/home/TrustStrip';
 import { IntroCopy } from '@/components/home/IntroCopy';
-import { AppointmentTypesSection } from '@/components/home/AppointmentTypesSection';
 import { EyeExamDetail } from '@/components/home/EyeExamDetail';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { Testimonials } from '@/components/home/Testimonials';
@@ -17,7 +16,6 @@ export default function HomePage() {
       <Hero />
       <TrustStrip />
       <IntroCopy />
-      <AppointmentTypesSection />
       <EyeExamDetail />
       <WhyChooseUs />
       <Testimonials />
