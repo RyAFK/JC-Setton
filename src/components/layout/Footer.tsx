@@ -3,9 +3,9 @@ import { nav, practice } from '@/content/practice';
 
 export function Footer() {
   return (
-    <footer className="bg-ink-900 pb-24 pt-14 text-white lg:pb-14">
+    <footer className="bg-ink-900 pb-28 pt-16 text-white lg:pb-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-xl font-semibold">J.C. Setton Opticians</p>
             <p className="mt-2 text-sm text-white/70">
@@ -63,7 +63,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-8 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} J.C. Setton Opticians. All rights reserved.</p>
           <p>Company information sourced from public records where cited.</p>
         </div>

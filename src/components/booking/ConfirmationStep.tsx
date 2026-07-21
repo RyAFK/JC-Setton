@@ -22,7 +22,7 @@ export function ConfirmationStep({ reference, summary }: Props) {
 
   return (
     <div role="status">
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-practice-teal-light text-practice-teal">
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-practice-blue-tint text-practice-blue">
         <IconCheck width={28} height={28} />
       </span>
       <h2 className="mt-5 font-display text-h2 text-ink-900">
@@ -33,7 +33,7 @@ export function ConfirmationStep({ reference, summary }: Props) {
         by email or telephone.
       </p>
 
-      <dl className="mt-6 max-w-sm space-y-2 rounded-xl2 border border-black/10 bg-practice-cream p-5 text-sm">
+      <dl className="mt-6 max-w-sm space-y-2 rounded-xl2 border border-black/10 bg-practice-paper p-5 text-sm">
         <div className="flex justify-between gap-4">
           <dt className="font-semibold text-ink-900">Appointment</dt>
           <dd className="text-right text-ink-700">{summary.typeName}</dd>
@@ -56,7 +56,7 @@ export function ConfirmationStep({ reference, summary }: Props) {
         This is a request, not yet a confirmed appointment — we’ll be in touch shortly to confirm
         the time. If your symptoms are urgent or your vision has changed suddenly, please contact
         the practice directly on{' '}
-        <a href={practice.phone.href} className="font-semibold text-practice-teal-dark underline">
+        <a href={practice.phone.href} className="font-semibold text-practice-blue-dark underline">
           {practice.phone.display}
         </a>
         .

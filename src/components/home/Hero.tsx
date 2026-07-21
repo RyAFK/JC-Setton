@@ -15,7 +15,7 @@ const reassurance = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-practice-cream">
+    <section className="relative isolate overflow-hidden bg-practice-paper">
       {/* From xl: graphic bleeds off the right edge behind a scrim, so the text
           keeps full contrast. This is the same breakpoint the header switches to
           its full desktop nav, so the hero and header never disagree about
@@ -28,24 +28,24 @@ export function Hero() {
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-cream via-practice-cream/75 to-transparent xl:block"
+        className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-practice-paper via-practice-paper/75 to-transparent xl:block"
       />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20 xl:py-28">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 xl:py-32">
         <div className="max-w-xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-practice-gold">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-wide text-practice-accent">
             Independent Opticians in West Wickham
           </p>
           <h1 className="font-display text-h1 text-ink-900">
             Eye Care That Is Thorough, Personal and Never Rushed
           </h1>
-          <p className="mt-5 max-w-prose text-body text-ink-700">
+          <p className="mt-6 max-w-prose text-body text-ink-700">
             From routine eye tests and advanced retinal imaging to children’s vision and
             specialist contact lenses, receive expert care tailored to your eyes, lifestyle and
             concerns.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button
               href="/book"
               fullWidthMobile
@@ -63,10 +63,10 @@ export function Hero() {
             </Button>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-ink-700">
+          <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-ink-700">
             {reassurance.map((item) => (
               <li key={item} className="flex items-center gap-1.5">
-                <IconCheck width={16} height={16} className="shrink-0 text-practice-teal" />
+                <IconCheck width={16} height={16} className="shrink-0 text-practice-blue" />
                 {item}
               </li>
             ))}

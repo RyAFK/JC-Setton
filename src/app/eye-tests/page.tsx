@@ -31,7 +31,7 @@ export default function EyeTestsPage() {
       />
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeading title="What a routine eye examination may include" />
             <p className="text-[15px] text-ink-500">
@@ -42,7 +42,7 @@ export default function EyeTestsPage() {
           <ul className="space-y-3">
             {items.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <IconCheck width={20} height={20} className="mt-0.5 shrink-0 text-practice-teal" />
+                <IconCheck width={20} height={20} className="mt-0.5 shrink-0 text-practice-blue" />
                 <span className="text-[15px] text-ink-700">{item}</span>
               </li>
             ))}
@@ -58,7 +58,7 @@ export default function EyeTestsPage() {
         />
       </Section>
 
-      <Section tone="teal" className="text-center">
+      <Section tone="blue" className="text-center">
         <h2 className="font-display text-h2">Book a Comprehensive Eye Examination</h2>
         <p className="mx-auto mt-3 max-w-prose text-white/85">
           Choose a convenient time online, or call the practice on {practice.phone.display}.

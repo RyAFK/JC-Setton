@@ -28,14 +28,14 @@ export function WhyChooseUs() {
   return (
     <Section>
       <SectionHeading title="Why Choose J.C. Setton Opticians?" align="center" />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {points.map(({ icon: Icon, title, body }) => (
-          <div key={title} className="rounded-xl2 border border-black/5 bg-practice-cream p-6">
-            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-practice-teal shadow-card">
+          <div key={title} className="rounded-xl2 border border-black/5 bg-practice-paper p-8">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-practice-blue shadow-card">
               <Icon width={22} height={22} />
             </span>
-            <h3 className="mt-4 font-display text-h3 text-ink-900">{title}</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-ink-700">{body}</p>
+            <h3 className="mt-5 font-display text-h3 text-ink-900">{title}</h3>
+            <p className="mt-3 text-[15px] leading-relaxed text-ink-700">{body}</p>
           </div>
         ))}
       </div>

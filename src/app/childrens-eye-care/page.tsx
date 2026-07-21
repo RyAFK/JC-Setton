@@ -30,13 +30,13 @@ export default function ChildrensEyeCarePage() {
       />
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeading title="Book an appointment if your child:" />
             <ul className="space-y-3">
               {signs.map((sign) => (
                 <li key={sign} className="flex items-start gap-3">
-                  <IconCheck width={20} height={20} className="mt-0.5 shrink-0 text-practice-teal" />
+                  <IconCheck width={20} height={20} className="mt-0.5 shrink-0 text-practice-blue" />
                   <span className="text-[15px] text-ink-700">{sign}</span>
                 </li>
               ))}

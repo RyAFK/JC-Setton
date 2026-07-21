@@ -21,7 +21,7 @@ export default function SpecialistEyeCarePage() {
       />
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeading
               title="A dedicated specialist contact lens clinic"
@@ -36,7 +36,7 @@ export default function SpecialistEyeCarePage() {
             />
             <a
               href={practice.phone.href}
-              className="font-semibold text-practice-teal-dark underline underline-offset-4"
+              className="font-semibold text-practice-blue-dark underline underline-offset-4"
             >
               Get Help With an Eye Concern — call {practice.phone.display}
             </a>

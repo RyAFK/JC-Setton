@@ -78,13 +78,13 @@ export function ContactDetailsStep({ details, errors, onChange, onBack, onSubmit
           rows={3}
           value={details.notes}
           onChange={(e) => field('notes', e.target.value)}
-          className="mt-2 w-full rounded-md border-2 border-black/15 p-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+          className="mt-2 w-full rounded-md border-2 border-black/15 p-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
         />
       </div>
 
       <p className="mt-4 text-sm text-ink-500">
         If your symptoms are urgent or your vision has changed suddenly, please call us on{' '}
-        <a href="tel:+442087771106" className="font-semibold text-practice-teal-dark underline">
+        <a href="tel:+442087771106" className="font-semibold text-practice-blue-dark underline">
           020 8777 1106
         </a>{' '}
         instead of booking online.
@@ -133,7 +133,7 @@ function FormField({
         onChange={(e) => onChange(e.target.value)}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? errorId : undefined}
-        className={`mt-2 min-h-[48px] w-full rounded-md border-2 px-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold ${
+        className={`mt-2 min-h-[48px] w-full rounded-md border-2 px-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus ${
           error ? 'border-red-600' : 'border-black/15'
         }`}
       />

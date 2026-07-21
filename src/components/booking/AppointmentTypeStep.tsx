@@ -29,7 +29,7 @@ export function AppointmentTypeStep({ selectedId, onSelect }: Props) {
 
       <p className="mt-6 text-[15px] text-ink-700">
         Not sure what to book?{' '}
-        <a href={practice.phone.href} className="font-semibold text-practice-teal-dark underline">
+        <a href={practice.phone.href} className="font-semibold text-practice-blue-dark underline">
           Call our team on {practice.phone.display}
         </a>
         .

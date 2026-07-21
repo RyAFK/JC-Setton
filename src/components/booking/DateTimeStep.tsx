@@ -51,7 +51,7 @@ export function DateTimeStep({ date, time, onDateChange, onTimeChange, onBack, o
           max={maxDate}
           value={date}
           onChange={(e) => onDateChange(e.target.value)}
-          className="mt-2 min-h-[48px] w-full rounded-md border-2 border-black/15 px-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+          className="mt-2 min-h-[48px] w-full rounded-md border-2 border-black/15 px-3 text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
         />
       </div>
 
@@ -75,10 +75,10 @@ export function DateTimeStep({ date, time, onDateChange, onTimeChange, onBack, o
                 type="button"
                 aria-pressed={time === slot}
                 onClick={() => onTimeChange(slot)}
-                className={`min-h-[44px] rounded-md border-2 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold ${
+                className={`min-h-[44px] rounded-md border-2 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus ${
                   time === slot
-                    ? 'border-practice-teal bg-practice-teal text-white'
-                    : 'border-black/15 text-ink-900 hover:border-practice-teal'
+                    ? 'border-practice-blue bg-practice-blue text-white'
+                    : 'border-black/15 text-ink-900 hover:border-practice-blue'
                 }`}
               >
                 {slot}

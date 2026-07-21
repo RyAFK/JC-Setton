@@ -35,8 +35,8 @@ export function LensChartGraphic({ className }: { className?: string }) {
       <defs>
         <radialGradient id="lensGradient" cx="50%" cy="42%" r="70%">
           <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="55%" stopColor="#eef6f5" />
-          <stop offset="100%" stopColor="#dcece9" />
+          <stop offset="55%" stopColor="#eef4fa" />
+          <stop offset="100%" stopColor="#dbe8f4" />
         </radialGradient>
         <filter id="lensBlurLarge">
           <feGaussianBlur stdDeviation="2.4" />
@@ -47,14 +47,14 @@ export function LensChartGraphic({ className }: { className?: string }) {
       </defs>
 
       <circle cx="200" cy="200" r="196" fill="url(#lensGradient)" />
-      <circle cx="200" cy="200" r="188" fill="none" stroke="#b6862c" strokeWidth="2" opacity="0.55" />
-      <g stroke="#b6862c" strokeWidth="2" opacity="0.55">
+      <circle cx="200" cy="200" r="188" fill="none" stroke="#2b6693" strokeWidth="2" opacity="0.55" />
+      <g stroke="#2b6693" strokeWidth="2" opacity="0.55">
         {TICKS.map((t, i) => (
           <line key={i} x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />
         ))}
       </g>
 
-      <g style={{ fontFamily: 'var(--font-display)' }} textAnchor="middle" fill="#132022">
+      <g style={{ fontFamily: 'var(--font-display)' }} textAnchor="middle" fill="#0f1f33">
         <text x="200" y="96" fontSize="46" filter="url(#lensBlurLarge)" opacity="0.45">
           E
         </text>
@@ -75,10 +75,10 @@ export function LensChartGraphic({ className }: { className?: string }) {
         </text>
       </g>
 
-      <line x1="140" y1="212" x2="260" y2="212" stroke="#0f5c5c" strokeWidth="1" opacity="0.3" />
-      <circle cx="200" cy="200" r="6" fill="none" stroke="#0f5c5c" strokeWidth="1.4" opacity="0.5" />
+      <line x1="140" y1="212" x2="260" y2="212" stroke="#154a72" strokeWidth="1" opacity="0.3" />
+      <circle cx="200" cy="200" r="6" fill="none" stroke="#154a72" strokeWidth="1.4" opacity="0.5" />
 
-      <g style={{ fontFamily: 'var(--font-display)' }} fontSize="10" fill="#62767a" textAnchor="middle">
+      <g style={{ fontFamily: 'var(--font-display)' }} fontSize="10" fill="#5c6f85" textAnchor="middle">
         <text x="200" y="42">
           0
         </text>

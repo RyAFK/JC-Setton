@@ -16,7 +16,7 @@ export default function BookPage({
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-wide text-practice-gold">
+        <p className="text-sm font-semibold uppercase tracking-wide text-practice-accent">
           Book online
         </p>
         <h1 className="mt-2 font-display text-h1 text-ink-900">

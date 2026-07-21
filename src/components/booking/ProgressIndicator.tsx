@@ -14,9 +14,9 @@ export function ProgressIndicator({ currentStep }: { currentStep: number }) {
                 aria-current={state === 'current' ? 'step' : undefined}
                 className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-semibold ${
                   state === 'done'
-                    ? 'bg-practice-teal text-white'
+                    ? 'bg-practice-blue text-white'
                     : state === 'current'
-                      ? 'border-2 border-practice-teal text-practice-teal-dark'
+                      ? 'border-2 border-practice-blue text-practice-blue-dark'
                       : 'border border-black/15 text-ink-500'
                 }`}
               >

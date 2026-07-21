@@ -6,14 +6,14 @@ import { trackEvent } from '@/lib/analytics';
 
 export function FinalCta() {
   return (
-    <section className="bg-practice-teal text-white">
-      <div className="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-practice-blue text-white">
+      <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
         <h2 className="font-display text-h2">Ready to Book Your Eye Test?</h2>
-        <p className="mx-auto mt-4 max-w-prose text-white/85">
+        <p className="mx-auto mt-5 max-w-prose text-white/85">
           Choose a time that suits you, or call the practice and our team will help find the
           right appointment.
         </p>
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <Button
             href="/book"
             variant="onDark"

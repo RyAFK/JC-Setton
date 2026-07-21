@@ -9,10 +9,10 @@ export function LocationSection() {
   return (
     <Section tone="muted">
       <SectionHeading eyebrow="Find us" title="Plan Your Visit" />
-      <div className="grid gap-10 lg:grid-cols-2">
-        <div className="space-y-6">
-          <div className="flex gap-3">
-            <IconPin width={22} height={22} className="mt-0.5 shrink-0 text-practice-teal" />
+      <div className="grid gap-12 lg:grid-cols-2">
+        <div className="space-y-8">
+          <div className="flex gap-4">
+            <IconPin width={22} height={22} className="mt-0.5 shrink-0 text-practice-blue" />
             <div>
               <p className="font-semibold text-ink-900">{practice.name}</p>
               <address className="not-italic text-ink-700">
@@ -27,20 +27,20 @@ export function LocationSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent('directions_click')}
-                className="mt-2 inline-block font-semibold text-practice-teal-dark underline underline-offset-4"
+                className="mt-2 inline-block font-semibold text-practice-blue-dark underline underline-offset-4"
               >
                 Get directions
               </a>
             </div>
           </div>
 
-          <div className="flex gap-3">
-            <IconPhone width={22} height={22} className="mt-0.5 shrink-0 text-practice-teal" />
+          <div className="flex gap-4">
+            <IconPhone width={22} height={22} className="mt-0.5 shrink-0 text-practice-blue" />
             <div>
               <a
                 href={practice.phone.href}
                 onClick={() => trackEvent('telephone_link_click', { location: 'plan_visit' })}
-                className="font-semibold text-practice-teal-dark"
+                className="font-semibold text-practice-blue-dark"
               >
                 {practice.phone.display}
               </a>
@@ -48,8 +48,8 @@ export function LocationSection() {
             </div>
           </div>
 
-          <div className="flex gap-3">
-            <IconClock width={22} height={22} className="mt-0.5 shrink-0 text-practice-teal" />
+          <div className="flex gap-4">
+            <IconClock width={22} height={22} className="mt-0.5 shrink-0 text-practice-blue" />
             <div>
               <p className="font-semibold text-ink-900">Opening hours</p>
               <ul className="text-ink-700">

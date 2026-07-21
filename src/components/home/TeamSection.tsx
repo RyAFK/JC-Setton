@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 export function TeamSection() {
   return (
     <Section>
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading
             eyebrow="Meet the team"
@@ -15,11 +15,11 @@ export function TeamSection() {
           <Button href="/about">Meet the team</Button>
         </div>
         <div
-          className="flex aspect-[4/3] items-center justify-center rounded-xl2 bg-practice-teal-light"
+          className="flex aspect-[4/3] items-center justify-center rounded-xl2 bg-practice-blue-tint"
           role="img"
           aria-label="Illustration representing the Setton Opticians optometry team"
         >
-          <IconEye width={64} height={64} className="text-practice-teal" />
+          <IconEye width={64} height={64} className="text-practice-blue" />
         </div>
       </div>
     </Section>

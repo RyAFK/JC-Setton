@@ -12,9 +12,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex shrink-0 flex-col leading-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-practice-gold rounded">
-          <span className="font-display text-xl font-semibold text-practice-teal-dark sm:text-2xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
+        <Link href="/" className="flex shrink-0 flex-col leading-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-practice-focus rounded">
+          <span className="font-display text-xl font-semibold text-practice-blue-dark sm:text-2xl">
             J.C. Setton
           </span>
           <span className="text-xs font-medium uppercase tracking-wide text-ink-500">
@@ -28,7 +28,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="whitespace-nowrap text-sm font-medium text-ink-700 underline-offset-4 hover:text-practice-teal-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold rounded"
+                  className="whitespace-nowrap text-sm font-medium text-ink-700 underline-offset-4 hover:text-practice-blue-dark hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus rounded"
                 >
                   {item.label}
                 </Link>
@@ -43,7 +43,7 @@ export function Header() {
             onClick={() => trackEvent('telephone_link_click', { location: 'header' })}
             aria-label={`Call us on ${practice.phone.display}`}
             title={practice.phone.display}
-            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full text-ink-700 hover:bg-practice-teal-light hover:text-practice-teal-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full text-ink-700 hover:bg-practice-blue-tint hover:text-practice-blue-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
           >
             <IconPhone width={20} height={20} />
           </a>
@@ -77,7 +77,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="flex min-h-[52px] items-center px-4 text-base font-medium text-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-practice-gold"
+                    className="flex min-h-[52px] items-center px-4 text-base font-medium text-ink-900 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-practice-focus"
                   >
                     {item.label}
                   </Link>
@@ -87,13 +87,13 @@ export function Header() {
           </nav>
           <div className="space-y-2 px-4 py-4 text-sm text-ink-700">
             <p className="flex items-center gap-2 font-medium">
-              <IconPin width={18} height={18} className="shrink-0 text-practice-teal" />
+              <IconPin width={18} height={18} className="shrink-0 text-practice-blue" />
               {practice.address.full}
             </p>
             <a
               href={practice.phone.href}
               onClick={() => trackEvent('telephone_link_click', { location: 'mobile_menu' })}
-              className="flex items-center gap-2 font-semibold text-practice-teal-dark"
+              className="flex items-center gap-2 font-semibold text-practice-blue-dark"
             >
               <IconPhone width={18} height={18} className="shrink-0" />
               {practice.phone.display}

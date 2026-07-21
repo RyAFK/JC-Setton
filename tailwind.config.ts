@@ -6,17 +6,18 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          900: '#132022',
-          700: '#2b3d40',
-          500: '#516568',
+          900: '#0f1f33',
+          700: '#33465c',
+          500: '#5c6f85',
         },
         practice: {
-          teal: '#0f5c5c',
-          'teal-dark': '#0a4444',
-          'teal-light': '#e6f2f1',
-          gold: '#b6862c',
-          'gold-light': '#f6ecd9',
-          cream: '#faf8f4',
+          blue: '#154a72',
+          'blue-dark': '#0e3454',
+          'blue-tint': '#e7f0f7',
+          accent: '#2b6693',
+          'accent-tint': '#eaf3fa',
+          paper: '#f5f8fb',
+          focus: '#3b82f6',
         },
       },
       fontFamily: {
@@ -43,7 +44,7 @@ const config: Config = {
         prose: '68ch',
       },
       boxShadow: {
-        card: '0 1px 2px rgba(19,32,34,0.06), 0 8px 24px -8px rgba(19,32,34,0.12)',
+        card: '0 1px 2px rgba(15,31,51,0.06), 0 8px 24px -8px rgba(15,31,51,0.14)',
       },
       borderRadius: {
         xl2: '1.25rem',

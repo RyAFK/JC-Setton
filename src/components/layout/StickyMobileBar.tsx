@@ -14,7 +14,7 @@ export function StickyMobileBar() {
         <a
           href={practice.phone.href}
           onClick={() => trackEvent('telephone_link_click', { location: 'sticky_bar' })}
-          className="flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-full border-2 border-practice-teal text-[15px] font-semibold text-practice-teal-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+          className="flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-full border-2 border-practice-blue text-[15px] font-semibold text-practice-blue-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
         >
           <IconPhone width={19} height={19} />
           Call Us
@@ -22,7 +22,7 @@ export function StickyMobileBar() {
         <a
           href="/book"
           onClick={() => trackEvent('sticky_mobile_booking_cta_click')}
-          className="flex min-h-[48px] flex-[1.4] items-center justify-center rounded-full bg-practice-teal text-[15px] font-semibold text-white hover:bg-practice-teal-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+          className="flex min-h-[48px] flex-[1.4] items-center justify-center rounded-full bg-practice-blue text-[15px] font-semibold text-white hover:bg-practice-blue-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
         >
           Book an Eye Test
         </a>

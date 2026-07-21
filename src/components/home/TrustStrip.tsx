@@ -26,11 +26,11 @@ const items = [
 
 export function TrustStrip() {
   return (
-    <Section className="py-12 sm:py-14">
-      <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <Section className="py-16 sm:py-20">
+      <ul className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {items.map(({ icon: Icon, title, body }) => (
-          <li key={title} className="flex flex-col items-start gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-practice-teal-light text-practice-teal">
+          <li key={title} className="flex flex-col items-start gap-4">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-practice-blue-tint text-practice-blue">
               <Icon />
             </span>
             <h3 className="font-display text-h3 text-ink-900">{title}</h3>

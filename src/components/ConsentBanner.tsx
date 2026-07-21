@@ -31,7 +31,7 @@ export function ConsentBanner() {
               setConsent('declined');
               setVisible(false);
             }}
-            className="min-h-[44px] rounded-full border border-white/30 px-4 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-gold"
+            className="min-h-[44px] rounded-full border border-white/30 px-4 text-sm font-semibold text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-practice-focus"
           >
             Decline
           </button>
@@ -41,7 +41,7 @@ export function ConsentBanner() {
               setConsent('accepted');
               setVisible(false);
             }}
-            className="min-h-[44px] rounded-full bg-practice-gold px-4 text-sm font-semibold text-ink-900 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="min-h-[44px] rounded-full bg-practice-accent px-4 text-sm font-semibold text-ink-900 hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Accept analytics
           </button>
